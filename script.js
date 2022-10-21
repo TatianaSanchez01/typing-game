@@ -1,7 +1,14 @@
 const quotes = [
-    'Things are only impossible until they are not',
-    'Without freedom of choice there is no creativity',
-    'Logic is the beginning of wisdom, not the end'
+    "For the last time, world of warcraft is not a cult",
+    "It would be like Beyonce riding a dinosaur in the middle of Times Square. People would notice",
+    "No one in Idris is going to teach you how to fight in five inch heels",
+    "I'll love you until I die. And if there's a life after this, I'll love you then too",
+    "When Glorious exploded, you saved my life",
+    "When you walk into a room, magic or not, that lights up everything",
+    "The law is hard, but it is the law",
+    "You know, I pray every day... every day to the angels that they will see that our love is stronger than their spite",
+    "It's more fun to break the rules than to follow them",
+    "All the legends are true"
 ];
 
 const quote = document.getElementById('quote');
@@ -30,6 +37,8 @@ function startGame() {
     };
 
     scores.push(scoreItem);
+    initializeGame();
+
 
     wordQueue = quoteText.split(' ');
     quote.innerHTML = wordQueue.map(word => (`<span>${word}</span>`)).join('');
@@ -45,6 +54,7 @@ function startGame() {
     setTimeout(() => {
         startTime.className = "button";
     }, 2000);
+
 }
 
 function checkInput() {
@@ -111,4 +121,9 @@ function createElementForScore(score) {
     const text = newListItem.querySelector(".score-text");
     text.innerHTML = score.name + " in " + score.milliseconds / 1000 + " seconds.";
     return newListItem;
+}
+
+function initializeGame() {
+    quote.innerHTML = '';
+    message.innerHTML = '';
 }
